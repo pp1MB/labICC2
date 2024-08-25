@@ -4,6 +4,20 @@
 #include <string.h>
 #include "operacoes.h"
 
+typedef struct {
+    clock_t start;
+    clock_t end;
+} Timer;
+
+void start_timer(Timer *timer) {
+    timer->start = clock();
+}
+
+double stop_timer(Timer *timer) {
+    timer->end = clock();
+    return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
+}
+
 // char* multiplicacao(const char* str1, const char* str2){
 //     int tam1 = strlen(str1);
 //     int tam2 = strlen(str2);
@@ -53,14 +67,19 @@ char *multiplicacao(const char *str1, const char* str2){
 char* karatsuba(char* str1, char* str2);
 
 int main() {
+    Timer timer;
     char *str1 = (char *) malloc(100000);
     char *str2 = (char *) malloc(100000);
 
     scanf("%s", str1);
     scanf("%s", str2);
 
+    start_timer(&timer);
+
     char *res = multiplicacao(str1, str2);
-    printf("%s", res);
+    printf("%s\n", res);
+
+    printf("Tempo de execução: %f segundos\n", stop_timer(&timer));
 
     // Inicialização
 

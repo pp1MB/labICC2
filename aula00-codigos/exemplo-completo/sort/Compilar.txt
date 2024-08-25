@@ -1,0 +1,1 @@
+gcc -Wall -o sort Main.c QuickSort.c BubbleSort.c FileManager.c StopWatch.c

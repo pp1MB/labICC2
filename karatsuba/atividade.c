@@ -4,6 +4,10 @@
 #include <string.h>
 #include "operacoes.h"
 
+
+#define max(a, b) ((a) > (b) ? (a) : (b))
+
+
 typedef struct {
     clock_t start;
     clock_t end;
@@ -63,8 +67,55 @@ char *multiplicacao(const char *str1, const char* str2){
     return res;
 }
 
-/* Algoritmo de Karatsuba*/
-char* karatsuba(char* str1, char* str2);
+char *corta_str(char *str, int corte){
+    char *str_cortada = (char *) malloc(sizeof(char) * (corte + 1));
+
+    for(int i = 0;i<corte;i++){
+        str_cortada[i] = str[i];
+    }
+
+    return str_cortada;
+}
+
+char* karatsuba(char* str1, char* str2){
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+
+    int maxLen = max(len1, len2);
+
+    if (len1 == 1 && len2 == 1) {
+        int product = (str1[0] - '0') * (str2[0] - '0');
+        char* result = (char*)malloc(3);
+        sprintf(result, "%d", product);
+        return result;
+    }
+
+    int mid = maxLen / 2;
+
+    char* sup1 = corta_str(str1, mid);
+    char* inf1 = str1 + mid;
+    char* sup2 = corta_str(str2, mid);
+    char* inf2 = str2 + mid;
+
+    char* z0 = karatsuba(inf1, inf2);
+    char* z1 = karatsuba(add(inf1, sup1), add(inf2, sup2));
+    char* z2 = karatsuba(sup1, sup2);
+
+    char* temp1 = sub(z1, z0);
+    char* temp2 = sub(temp1, z2);
+
+    char* result = add(add(potencia_de_10(z2, 2 * mid), potencia_de_10(temp2, mid)), z0);
+
+    free(sup1);
+    free(sup2);
+    free(temp1);
+    free(temp2);
+    free(z0);
+    free(z1);
+    free(z2);
+
+    return result;
+}
 
 int main() {
     Timer timer;

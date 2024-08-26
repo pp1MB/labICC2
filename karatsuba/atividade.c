@@ -4,9 +4,7 @@
 #include <string.h>
 #include "operacoes.h"
 
-
 #define max(a, b) ((a) > (b) ? (a) : (b))
-
 
 typedef struct {
     clock_t start;
@@ -85,7 +83,7 @@ char* karatsuba(char* str1, char* str2){
 
     if (len1 == 1 && len2 == 1) {
         int product = (str1[0] - '0') * (str2[0] - '0');
-        char* result = (char*)malloc(3);
+        char* result = (char*) malloc(3);
         sprintf(result, "%d", product);
         return result;
     }
@@ -126,11 +124,14 @@ int main() {
     scanf("%s", str2);
 
     start_timer(&timer);
-
     char *res = multiplicacao(str1, str2);
     printf("%s\n", res);
+    printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
 
-    printf("Tempo de execução: %f segundos\n", stop_timer(&timer));
+    start_timer(&timer);
+    char *resK = karatsuba(str1, str2);
+    printf("%s\n", resK);
+    printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
 
     // Inicialização
 

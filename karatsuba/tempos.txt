@@ -18,3 +18,51 @@ Tempo de execução Karatsuba: 0.000011 segundos
 
 Tempo de execução Multiplicação: 0.000008 segundos
 Tempo de execução Karatsuba: 0.000027 segundos
+
+# Terceiro Caso
+123 1
+
+Tempo de execução Multiplicação: 0.000011 segundos
+Tempo de execução Karatsuba: 0.000006 segundos
+
+# Quarto Caso
+5559511 942745
+
+Tempo de execução Multiplicação: 0.000018 segundos
+Tempo de execução Karatsuba: 0.000022 segundos
+
+# Quinto Caso
+451967485 974041531
+
+Tempo de execução Multiplicação: 0.000025 segundos
+Tempo de execução Karatsuba: 0.000035 segundos
+
+# Sexto Caso
+58308 26864
+
+Tempo de execução Multiplicação: 0.000015 segundos
+Tempo de execução Karatsuba: 0.000012 segundos
+
+# Setimo Caso
+72960255323310765653354653950472 86510364410909499838177207752028
+
+Tempo de execução Multiplicação: 0.000115 segundos
+Tempo de execução Karatsuba: 0.000219 segundos
+
+# Oitavo Caso
+999590709130689654284594658 408653822041278391993372602
+
+Tempo de execução Multiplicação: 0.000108 segundos
+Tempo de execução Karatsuba: 0.000131 segundos
+
+# Nono Caso
+11151796187156113 86133270039541076
+
+Tempo de execução Multiplicação: 0.000045 segundos
+Tempo de execução Karatsuba: 0.000095 segundos
+
+# Decimo Caso
+340231732460689610752995503611888015388487 608027489391540791225157000333572450140244
+
+Tempo de execução Multiplicação: 0.000195 segundos
+Tempo de execução Karatsuba: 0.000331 segundos

@@ -10,5 +10,8 @@ operacoes.o:
 run:
 	./karatsuba
 
+zip:
+	zip karatsuba.zip atividade.c operacoes.c operacoes.h Makefile
+
 clean:
 	rm *.o karatsuba

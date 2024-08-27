@@ -43,6 +43,19 @@ double stop_timer(Timer *timer) {
 //     return res;
 // }
 
+/* Remove os zeros extras na frente do número. */
+char *remove_leading_zeros(char *str) {
+    int i = 0;
+    int tam = strlen(str);
+    while (str[i] == '0') {
+        i++;
+        if(i == tam){
+            return str + i - 1;
+        }
+    }
+    return str + i;
+}
+
 /* Função simulando uma multiplicação 'na mão'.
  * Complexidade: O(n^2)*/
 char *multiplicacao(const char *str1, const char* str2){
@@ -63,19 +76,9 @@ char *multiplicacao(const char *str1, const char* str2){
             aux = potencia_de_10(aux, 1);
     }
 
-    if(res[0] == '0')
-        return res + 1;
+    res = remove_leading_zeros(res);
     
     return res;
-}
-
-/* Remove os zeros extras na frente do número. */
-char *remove_leading_zeros(char *str) {
-    int i = 0;
-    while (str[i] == '0') {
-        i++;
-    }
-    return str + i;
 }
 
 /* Adiciona zeros extras na frente do número
@@ -145,12 +148,12 @@ int main() {
 
     start_timer(&timer);
     char *res = multiplicacao(str1, str2);
-    // printf("%s\n", res);
+    printf("%s\n", res);
     printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
 
     start_timer(&timer);
     char *resK = karatsuba(str1, str2);
-    // printf("%s\n", resK);
+    printf("%s\n", resK);
     printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
 
     // free(str1);

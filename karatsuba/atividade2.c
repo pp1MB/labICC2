@@ -24,8 +24,12 @@ double stop_timer(Timer *timer) {
 
 char *remove_leading_zeros(char *str) {
     int i = 0;
+    int tam = strlen(str);
     while (str[i] == '0') {
         i++;
+        if(i == tam){
+            return str + i - 2;
+        }
     }
     return str + i;
 }

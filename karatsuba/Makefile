@@ -1,8 +1,8 @@
-all: atividade2.o operacoes.o
-	gcc atividade2.o operacoes.o -o karatsuba
+all: atividade.o operacoes.o
+	gcc atividade.o operacoes.o -o karatsuba
 
 atividade.o:
-	gcc -c atividade2.c
+	gcc -c atividade.c
 
 operacoes.o:
 	gcc -c operacoes.c

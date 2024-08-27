@@ -48,9 +48,11 @@ char *multiplicacao(const char *str1, const char* str2){
     int tam2 = strlen(str2);
 
     char *res = malloc(tam1 + tam2);
+    if(res == NULL) exit(1);
     memset(res, '0', tam1 + tam2);
 
     char *aux = malloc(tam2);
+    if(aux == NULL) exit(1);
     strcpy(aux, str2);
 
     for(int i = tam1 - 1; i >= 0; i--){

@@ -40,36 +40,28 @@ char *pad_with_zeros(char *str, int n) {
     return padded;
 }
 
-char *corta_string(char *str, int final) {
-    char *cortada = calloc(final + 1, sizeof(char));
-    strcpy(cortada, str);
-    cortada[final] = '\0';
-    return cortada;
-}
-
 char *karatsuba(char *str1, char *str2){
     int n = max(strlen(str1), strlen(str2));
 
-    // if(n % 2){
-    //     n++;
-    // }
+    if(n % 2){
+        n++;
+    }
 
-    pad_with_zeros(str1, n - strlen(str1));
-    pad_with_zeros(str2, n - strlen(str2));
+    char *s1 = pad_with_zeros(str1, n - strlen(str1));
+    char *s2 = pad_with_zeros(str2, n - strlen(str2));
 
     if(n <= 3){
         char *res = (char *) malloc(sizeof(char) * 7);
-        int calc = strtol(str1, NULL, 10) * strtol(str2, NULL, 10);
+        int calc = strtol(s1, NULL, 10) * strtol(s2, NULL, 10);
         sprintf(res, "%d", calc);
-        remove_leading_zeros(res);
         return res;
     }
     int m = n / 2;
 
-    char *p = corta_string(str1, m);
-    char *q = str1 + m;
-    char *r = corta_string(str2, m);
-    char *s = str2 + m;
+    char *p = strndup(s1, m);
+    char *q = s1 + m;
+    char *r = strndup(s2, m);
+    char *s = s2 + m;
 
     char *pr = karatsuba(p, r);
     char *qs = karatsuba(q, s);
@@ -77,7 +69,8 @@ char *karatsuba(char *str1, char *str2){
 
     char *res = add(add(potencia_de_10(pr, 2 * m), potencia_de_10(sub(sub(y, pr), qs), m)), qs);
 
-    remove_leading_zeros(res);
+    //printf("%s\n", res);
+    res = remove_leading_zeros(res);
 
     return res;
 }
@@ -91,21 +84,13 @@ int main() {
     scanf("%s", str1);
     scanf("%s", str2);
 
-    // start_timer(&timer);
-    // char *res = multiplicacao(str1, str2);
-    // printf("%s\n", res);
-    // printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
+    start_timer(&timer);
+    char *res = multiplicacao(str1, str2);
+    printf("%s\n", res);
+    printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
 
     start_timer(&timer);
     char *resK = karatsuba(str1, str2);
     printf("%s\n", resK);
     printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
-
-    // Inicialização
-
-    // Entrada (2 números inteiros positivos de até 10000 dígitos)
-
-    // Execução de multiplicação convencional e medição de tempo
-
-    // Execução de Karatsuba e medição de tempo
 }

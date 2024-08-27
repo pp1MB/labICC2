@@ -65,56 +65,67 @@ char *multiplicacao(const char *str1, const char* str2){
     return res;
 }
 
-char *corta_str(char *str, int corte){
-    char *str_cortada = (char *) malloc(sizeof(char) * corte);
-
-    for(int i = 0;i<corte;i++){
-        str_cortada[i] = str[i];
+char *remove_leading_zeros(char *str) {
+    int i = 0;
+    while (str[i] == '0') {
+        i++;
     }
-
-    return str_cortada;
+    return str + i;
 }
 
-char* karatsuba(char* str1, char* str2){
-    int len1 = strlen(str1);
-    int len2 = strlen(str2);
+char *pad_with_zeros(char *str, int n) {
+    char *padded = calloc(strlen(str) + n + 1, sizeof(char));
+    memset(padded, '0', n);
+    strcpy(padded + n, str);
 
-    int maxLen = max(len1, len2);
+    //printf("%s\n", padded);
+    
+    return padded;
+}
 
-    if (len1 == 1 && len2 == 1) {
-        int product = (str1[0] - '0') * (str2[0] - '0');
-        char* result = (char*) malloc(3);
-        sprintf(result, "%d", product);
-        return result;
+char *karatsuba(char *str1, char *str2){
+    int n = max(strlen(str1), strlen(str2));
+
+    if(n % 2){
+        n++;
     }
 
-    int mid = maxLen / 2;
+    char *s1 = pad_with_zeros(str1, n - strlen(str1));
+    char *s2 = pad_with_zeros(str2, n - strlen(str2));
 
-    char* sup1 = corta_str(str1, mid);
-    char* inf1 = str1 + mid;
-    char* sup2 = corta_str(str2, mid);
-    char* inf2 = str2 + mid;
+    if(n <= 3){
+        char *res = (char *) malloc(sizeof(char) * 7);
+        int calc = strtol(s1, NULL, 10) * strtol(s2, NULL, 10);
+        sprintf(res, "%d", calc);
+        return res;
+    }
+    int m = n / 2;
 
-    char* z0 = karatsuba(inf1, inf2);
-    char* z1 = karatsuba(add(inf1, sup1), add(inf2, sup2));
-    char* z2 = karatsuba(sup1, sup2);
+    char *p = strndup(s1, m);
+    char *q = s1 + m;
+    char *r = strndup(s2, m);
+    char *s = s2 + m;
 
-    char* temp1 = sub(z1, z0);
-    char* temp2 = sub(temp1, z2);
+    char *pr = karatsuba(p, r);
+    char *qs = karatsuba(q, s);
+    char *y = karatsuba(add(p, q), add(r, s));
 
-    char* result = add(add(potencia_de_10(z2, 2 * mid), potencia_de_10(temp2, mid)), z0);
-    printf("%s\n", result);
+    char *res = add(add(potencia_de_10(pr, 2 * m), potencia_de_10(sub(sub(y, pr), qs), m)), qs);
 
-    free(sup1);
-    free(sup2);
-    // free(temp1);
-    // free(temp2);
-    // free(z0);
-    // free(z1);
-    // free(z2);
+    //free(s1);
+    //free(s2);
+    free(p);
+    free(r);
+    free(pr);
+    free(qs);
+    free(y);
 
-    return result;
+    //printf("%s\n", res);
+    res = remove_leading_zeros(res);
+
+    return res;
 }
+
 
 int main() {
     Timer timer;
@@ -133,6 +144,9 @@ int main() {
     char *resK = karatsuba(str1, str2);
     printf("%s\n", resK);
     printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
+
+    free(str1);
+    free(str2);
 
     // Inicialização
 

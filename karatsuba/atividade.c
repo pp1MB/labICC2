@@ -66,7 +66,7 @@ char *multiplicacao(const char *str1, const char* str2){
 }
 
 char *corta_str(char *str, int corte){
-    char *str_cortada = (char *) malloc(sizeof(char) * (corte + 1));
+    char *str_cortada = (char *) malloc(sizeof(char) * corte);
 
     for(int i = 0;i<corte;i++){
         str_cortada[i] = str[i];
@@ -103,14 +103,15 @@ char* karatsuba(char* str1, char* str2){
     char* temp2 = sub(temp1, z2);
 
     char* result = add(add(potencia_de_10(z2, 2 * mid), potencia_de_10(temp2, mid)), z0);
+    printf("%s\n", result);
 
     free(sup1);
     free(sup2);
-    free(temp1);
-    free(temp2);
-    free(z0);
-    free(z1);
-    free(z2);
+    // free(temp1);
+    // free(temp2);
+    // free(z0);
+    // free(z1);
+    // free(z2);
 
     return result;
 }

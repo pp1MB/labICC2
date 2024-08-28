@@ -55,6 +55,12 @@ Tempo de execução Karatsuba: 0.000219 segundos
 Tempo de execução Multiplicação: 0.000108 segundos
 Tempo de execução Karatsuba: 0.000131 segundos
 
+Tempo de execução Multiplicação: 0.000190 segundos
+Tempo de execução Karatsuba: 0.000220 segundos
+
+Tempo de execução Multiplicação: 0.000240 segundos
+Tempo de execução Karatsuba: 0.000230 segundos
+
 # Nono Caso
 11151796187156113 86133270039541076
 
@@ -66,3 +72,10 @@ Tempo de execução Karatsuba: 0.000095 segundos
 
 Tempo de execução Multiplicação: 0.000195 segundos
 Tempo de execução Karatsuba: 0.000331 segundos
+
+Tempo de execução Multiplicação: 0.000240 segundos
+Tempo de execução Karatsuba: 0.000381 segundos
+
+Tempo de execução Multiplicação: 0.000317 segundos
+Tempo de execução Karatsuba: 0.000523 segundos
+

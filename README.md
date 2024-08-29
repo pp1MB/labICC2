@@ -3,5 +3,5 @@ A proposta da disciplina é a implementação de algoritmos variados e a compara
 - Todos os trabalhos possuem um relatório detalhando o processo de construção dos códigos e métodos de avaliação. Abaixo está um resumo de cada trabalho.
 
 ## Trabalho 1 - Multiplicação
-Faça duas implementações, uma utilizando a multiplicação convencional e outra utilizando o algoritmo de Karatsuba. Na conclusão lembre-se que o método convencional é $O(n^{2})$ e o algoritmo de Karatsuba $O(n^{log_23}$
+> Faça duas implementações, uma utilizando a multiplicação convencional e outra utilizando o algoritmo de Karatsuba. Na conclusão lembre-se que o método convencional é $O(n^{2})$ e o algoritmo de Karatsuba $O(n^{log_23}) \approx O(n^{1.58}).$
 

@@ -1,3 +1,10 @@
+/* Grupo
+ * Pedro Henrique de Sousa Prestes - 15507819
+ * Pedro Lunkes Villela - 15484287 */
+
+/* Trabalho 1 - Multiplicação
+ * Multiplicação Convencional x Algoritmo de Karatsuba */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -123,14 +130,6 @@ char *karatsuba(char *str1, char *str2){
 
     char *res = add(add(potencia_de_10(pr, 2 * m), potencia_de_10(sub(sub(y, pr), qs), m)), qs);
 
-    //free(s1);
-    //free(s2);
-    // free(p);
-    // free(r);
-    // free(pr);
-    // free(qs);
-    // free(y);
-
     //printf("%s\n", res);
     res = remove_leading_zeros(res);
 
@@ -146,16 +145,18 @@ int main() {
     scanf("%s", str1);
     scanf("%s", str2);
 
+    /* Medição de tempo Método Convencional*/
     start_timer(&timer);
     char *res = multiplicacao(str1, str2);
     printf("%s\n", res);
     printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
 
+    /* Medição de tempo Karatsuba */ 
     start_timer(&timer);
     char *resK = karatsuba(str1, str2);
     printf("%s\n", resK);
     printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
 
-    // free(str1);
-    // free(str2);
+    free(str1);
+    free(str2);
 }

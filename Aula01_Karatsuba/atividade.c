@@ -103,18 +103,14 @@ char *pad_with_zeros(char *str, int n) {
  * Complexidade: O(n^~1.58)*/
 char *karatsuba(char *str1, char *str2){
     int n = max(strlen(str1), strlen(str2));
-
-    if(n % 2){
-        n++;
-    }
-
     char *s1 = pad_with_zeros(str1, n - strlen(str1));
     char *s2 = pad_with_zeros(str2, n - strlen(str2));
 
-    if(n <= 3){
-        char *res = (char *) malloc(sizeof(char) * 7);
-        int calc = strtol(s1, NULL, 10) * strtol(s2, NULL, 10);
-        sprintf(res, "%d", calc);
+    if(n <= 1){
+        char *res = malloc(3);
+        res[1] = '0' + ((*s1 - '0') * (*s2 - '0') % 10);
+        res[0] = ((*s1 - '0') * (*s2 - '0') / 10) + '0';
+        res[2] = '\0';
         return res;
     }
     int m = n / 2;
@@ -124,11 +120,17 @@ char *karatsuba(char *str1, char *str2){
     char *r = strndup(s2, m);
     char *s = s2 + m;
 
+    if(n % 2) m++;
+
+
     char *pr = karatsuba(p, r);
     char *qs = karatsuba(q, s);
     char *y = karatsuba(add(p, q), add(r, s));
 
-    char *res = add(add(potencia_de_10(pr, 2 * m), potencia_de_10(sub(sub(y, pr), qs), m)), qs);
+    char *p1 = potencia_de_10(pr, 2 * m);
+    char *p2 = potencia_de_10(sub(sub(y, pr), qs), m);
+
+    char *res = add(add(p1, p2), qs);
 
     //printf("%s\n", res);
     res = remove_leading_zeros(res);
@@ -144,6 +146,8 @@ int main() {
 
     scanf("%s", str1);
     scanf("%s", str2);
+
+    //printf("%d %d\n", strlen(str1), strlen(str2)); 
 
     /* Medição de tempo Método Convencional*/
     start_timer(&timer);

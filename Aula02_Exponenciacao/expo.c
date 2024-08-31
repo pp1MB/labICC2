@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int expo_iterativo(int n, int i);
-int expo_recursivo(int n, int k);
+long int expo_iterativo(long int n, long int i);
+long int expo_recursivo(long int n, long int k);
 
 /* Configurações timer */
 
@@ -28,24 +28,24 @@ int main(void){
     int n, i;
     scanf("%d %d", &n, &i);
 
-    /* Execução Recursivo */
-    start_timer(&timer);   
-    printf("%lld\n", expo_recursivo(n, i));
-    stop_timer(&timer);
-    printf("Tempo de execução Recursivo: %f segundos\n", stop_timer(&timer));
-
     /* Execução Iterativo */
     start_timer(&timer);
-    printf("%lld\n", expo_iterativo(n, i));
+    printf("%ld\n", expo_iterativo(n, i));
     stop_timer(&timer);
     printf("Tempo de execução Iterativo: %f segundos\n", stop_timer(&timer));
+
+    // /* Execução Recursivo */
+    // start_timer(&timer);   
+    // printf("%ld\n", expo_recursivo(n, i));
+    // stop_timer(&timer);
+    // printf("Tempo de execução Recursivo: %f segundos\n", stop_timer(&timer));
 
     return 0;
 }
 
 /* Exponenciação Iterativo: Recebe n^i*/
-int expo_iterativo(int n, int i){
-    int res = n;
+long int expo_iterativo(long int n, long int i){
+    long int res = n;
     for(i; i > 1; i--){
         n *= res;
         n %= 10000;
@@ -55,11 +55,11 @@ int expo_iterativo(int n, int i){
 }
 
 /* Exponenciação Recursivo: Recebe n^k*/
-int expo_recursivo(int n, int k){
+long int expo_recursivo(long int n, long int k){
     if(k == 1)
         return n;
 
-    int p = expo_recursivo(n, k/2);
+    long int p = expo_recursivo(n, k/2);
 
     if(k % 2)
         n = p * p * n;

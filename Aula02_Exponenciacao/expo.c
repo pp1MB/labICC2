@@ -32,13 +32,13 @@ int main(void){
     start_timer(&timer);
     printf("%ld\n", expo_iterativo(n, i));
     stop_timer(&timer);
-    printf("Tempo de execução Iterativo: %f segundos\n", stop_timer(&timer));
+    printf("%f", stop_timer(&timer));
 
     // /* Execução Recursivo */
     // start_timer(&timer);   
     // printf("%ld\n", expo_recursivo(n, i));
     // stop_timer(&timer);
-    // printf("Tempo de execução Recursivo: %f segundos\n", stop_timer(&timer));
+    // printf("%f", stop_timer(&timer));
 
     return 0;
 }

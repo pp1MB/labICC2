@@ -109,10 +109,16 @@ char *karatsuba(char *str1, char *str2){
     char *s1 = pad_with_zeros(str1, n - strlen(str1));
     char *s2 = pad_with_zeros(str2, n - strlen(str2));
 
-    if(n == 3){
-        return multiplicacao(s1, s2);
+    if(n == 1){
+        char *res = malloc(3);
+        res[0] = ((s1[0] - '0') * (s2[0] - '0')) / 10 + '0';
+        res[1] = ((s1[0] - '0') * (s2[0] - '0')) % 10 + '0';
+        res[2] = '\0';
+        return res;
     }
+
     int m = n / 2;
+    //m = m + n % 2;
 
     char *q = s1 + m;
     char *p = strndup(s1, m);
@@ -136,7 +142,6 @@ char *karatsuba(char *str1, char *str2){
     return res;
 }
 
-
 int main() {
     Timer timer;
     char *str1 = (char *) malloc(100000);
@@ -151,14 +156,11 @@ int main() {
     start_timer(&timer);
     char *res = multiplicacao(str1, str2);
     printf("%s\n", res);
-    printf("Tempo de execução Multiplicação: %f segundos\n", stop_timer(&timer));
+    printf("%f\n", stop_timer(&timer));
 
     /* Medição de tempo Karatsuba */ 
     start_timer(&timer);
     char *resK = karatsuba(str1, str2);
     printf("%s\n", resK);
-    printf("Tempo de execução Karatsuba: %f segundos\n", stop_timer(&timer));
-
-    free(str1);
-    free(str2);
+    printf("%f\n", stop_timer(&timer));
 }

@@ -1,150 +1,150 @@
 1° Caso:
-Tempo de execução Iterativo: 0.000011 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000022
+Tempo de Execução Recursivo: 0.000015
 
-Tempo de execução Iterativo: 0.000008 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000009
+Tempo de Execução Recursivo: 0.000015
 
-Tempo de execução Iterativo: 0.000008 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000011
+Tempo de Execução Recursivo: 0.000010
 
 2° Caso:
-Tempo de execução Iterativo: 0.000010 segundos
-Tempo de execução Recursivo: 0.000019 segundos
+Tempo de Execução Iterativo: 0.000005
+Tempo de Execução Recursivo: 0.000007
 
-Tempo de execução Iterativo: 0.000006 segundos
-Tempo de execução Recursivo: 0.000003 segundos
+Tempo de Execução Iterativo: 0.000013
+Tempo de Execução Recursivo: 0.000005
 
-Tempo de execução Iterativo: 0.000012 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 0.000014
+Tempo de Execução Recursivo: 0.000007
 
 3° Caso:
-Tempo de execução Iterativo: 0.000007 segundos
-Tempo de execução Recursivo: 0.000011 segundos
+Tempo de Execução Iterativo: 0.000053
+Tempo de Execução Recursivo: 0.000012
 
-Tempo de execução Iterativo: 0.000007 segundos
-Tempo de execução Recursivo: 0.000027 segundos
+Tempo de Execução Iterativo: 0.000014
+Tempo de Execução Recursivo: 0.000011
 
-Tempo de execução Iterativo: 0.000013 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 0.000014
+Tempo de Execução Recursivo: 0.000012
 
 4° Caso:
-Tempo de execução Iterativo: 5.430655 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 3.025747
+Tempo de Execução Recursivo: 0.000013
 
-Tempo de execução Iterativo: 5.359292 segundos
-Tempo de execução Recursivo: 0.000008 segundos
+Tempo de Execução Iterativo: 3.045052
+Tempo de Execução Recursivo: 0.000014
 
-Tempo de execução Iterativo: 5.266720 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 3.037377
+Tempo de Execução Recursivo: 0.000021
 
 5° Caso:
-Tempo de execução Iterativo: 0.000322 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 0.000620
+Tempo de Execução Recursivo: 0.000015
 
-Tempo de execução Iterativo: 0.000322 segundos
-Tempo de execução Recursivo: 0.000005 segundos
+Tempo de Execução Iterativo: 0.000611
+Tempo de Execução Recursivo: 0.000011
 
-Tempo de execução Iterativo: 0.000366 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 0.000198
+Tempo de Execução Recursivo: 0.000008
 
 6° Caso:
-Tempo de execução Iterativo: 0.000091 segundos
-Tempo de execução Recursivo: 0.000005 segundos
+Tempo de Execução Iterativo: 0.000180
+Tempo de Execução Recursivo: 0.000010
 
-Tempo de execução Iterativo: 0.000136 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000172
+Tempo de Execução Recursivo: 0.000009
 
-Tempo de execução Iterativo: 0.000113 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 0.000063
+Tempo de Execução Recursivo: 0.000006
 
 7° Caso:
-Tempo de execução Iterativo: 0.000057 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 0.000033
+Tempo de Execução Recursivo: 0.000004
 
-Tempo de execução Iterativo: 0.000101 segundos
-Tempo de execução Recursivo: 0.000021 segundos
+Tempo de Execução Iterativo: 0.000039
+Tempo de Execução Recursivo: 0.000005
 
-Tempo de execução Iterativo: 0.000135 segundos
-Tempo de execução Recursivo: 0.000011 segundos
+Tempo de Execução Iterativo: 0.000034
+Tempo de Execução Recursivo: 0.000013
 
 8° Caso:
-Tempo de execução Iterativo: 0.000411 segundos
-Tempo de execução Recursivo: 0.000004 segundos
+Tempo de Execução Iterativo: 0.000568
+Tempo de Execução Recursivo: 0.000015
 
-Tempo de execução Iterativo: 0.000415 segundos
-Tempo de execução Recursivo: 0.000016 segundos
+Tempo de Execução Iterativo: 0.000256
+Tempo de Execução Recursivo: 0.000011
 
-Tempo de execução Iterativo: 0.000411 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000692
+Tempo de Execução Recursivo: 0.000024
 
 9° Caso:
-Tempo de execução Iterativo: 0.000093 segundos
-Tempo de execução Recursivo: 0.000014 segundos
+Tempo de Execução Iterativo: 0.000041
+Tempo de Execução Recursivo: 0.000008
 
-Tempo de execução Iterativo: 0.000070 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 0.000126
+Tempo de Execução Recursivo: 0.000016
 
-Tempo de execução Iterativo: 0.000096 segundos
-Tempo de execução Recursivo: 0.000014 segundos
+Tempo de Execução Iterativo: 0.000127
+Tempo de Execução Recursivo: 0.000019
 
 10° Caso:
-Tempo de execução Iterativo: 5.350064 segundos
-Tempo de execução Recursivo: 0.000006 segundos
+Tempo de Execução Iterativo: 3.006402
+Tempo de Execução Recursivo: 0.000013
 
-Tempo de execução Iterativo: 5.198750 segundos
-Tempo de execução Recursivo: 0.000008 segundos
+Tempo de Execução Iterativo: 3.039266
+Tempo de Execução Recursivo: 0.000022
 
-Tempo de execução Iterativo: 5.189348 segundos
-Tempo de execução Recursivo: 0.000006 segundos
+Tempo de Execução Iterativo: 3.040532
+Tempo de Execução Recursivo: 0.000024
 
 11° Caso:
-Tempo de execução Iterativo: 2.648932 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 1.511782
+Tempo de Execução Recursivo: 0.000019
 
-Tempo de execução Iterativo: 2.608502 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 1.482178
+Tempo de Execução Recursivo: 0.000016
 
-Tempo de execução Iterativo: 2.624371 segundos
-Tempo de execução Recursivo: 0.000006 segundos
+Tempo de Execução Iterativo: 1.514799
+Tempo de Execução Recursivo: 0.000023
 
 12° Caso:
-Tempo de execução Iterativo: 1.571014 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 0.875731
+Tempo de Execução Recursivo: 0.000011
 
-Tempo de execução Iterativo: 1.526429 segundos
-Tempo de execução Recursivo: 0.000008 segundos
+Tempo de Execução Iterativo: 0.877040
+Tempo de Execução Recursivo: 0.000024
 
-Tempo de execução Iterativo: 1.578844 segundos
-Tempo de execução Recursivo: 0.000024 segundos
+Tempo de Execução Iterativo: 0.876255
+Tempo de Execução Recursivo: 0.000025
 
 13° Caso:
-Tempo de execução Iterativo: 4.439298 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 2.540935
+Tempo de Execução Recursivo: 0.000010
 
-Tempo de execução Iterativo: 4.501957 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 2.575017
+Tempo de Execução Recursivo: 0.000019
 
-Tempo de execução Iterativo: 4.458750 segundos
-Tempo de execução Recursivo: 0.000004 segundos
+Tempo de Execução Iterativo: 2.577257
+Tempo de Execução Recursivo: 0.000023
 
 14° Caso:
-Tempo de execução Iterativo: 4.474302 segundos
-Tempo de execução Recursivo: 0.000007 segundos
+Tempo de Execução Iterativo: 2.581266
+Tempo de Execução Recursivo: 0.000021
 
-Tempo de execução Iterativo: 4.465368 segundos
-Tempo de execução Recursivo: 0.000009 segundos
+Tempo de Execução Iterativo: 2.565997
+Tempo de Execução Recursivo: 0.000022
 
-Tempo de execução Iterativo: 4.519154 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 2.544093
+Tempo de Execução Recursivo: 0.000018
 
 15° Caso:
-Tempo de execução Iterativo: 1.989854 segundos
-Tempo de execução Recursivo: 0.000010 segundos
+Tempo de Execução Iterativo: 1.150989
+Tempo de Execução Recursivo: 0.000028
 
-Tempo de execução Iterativo: 1.978116 segundos
-Tempo de execução Recursivo: 0.000004 segundos
+Tempo de Execução Iterativo: 1.121019
+Tempo de Execução Recursivo: 0.000022
 
-Tempo de execução Iterativo: 2.096662 segundos
-Tempo de execução Recursivo: 0.000015 segundos
+Tempo de Execução Iterativo: 1.152484
+Tempo de Execução Recursivo: 0.000008
 

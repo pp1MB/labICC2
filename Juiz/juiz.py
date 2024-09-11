@@ -37,13 +37,20 @@ def arquivo_bonito(n_casos_teste):
                         print(f"Recebido 1: {repr(linhas1[0])}")
                         print(f"Recebido 2: {repr(linhas2[0])}")
 
-                f.write(f"{linhas1[1]}\n")
-                f.write(f"{linhas2[1]}\n")
+                f.write(f"Tempo de Execução Iterativo: {linhas1[1]}\n")
+                f.write(f"Tempo de Execução Recursivo: {linhas2[1]}\n")
                 f.write('\n')
 
 
 def arquivo_grafico(n_casos_teste):
     with open(arquivo_saida_grafico, 'w') as f:
+        for j in range(1, n_casos_teste):
+            arquivo_in = f"casoteste/{j}.in"
+
+            with open(arquivo_in, 'r') as a:
+                argumentos = a.read().split()
+                f.write(f"{len(argumentos[1])}\n")
+
         for j in range(1, n_casos_teste):
             arquivo_in = f"casoteste/{j}.in"
 
@@ -75,6 +82,6 @@ def arquivo_grafico_de_txt():
 
 
 if __name__ == '__main__':
-    #arquivo_bonito(16)
-    #arquivo_grafico(16)
-    arquivo_grafico_de_txt()
+    # arquivo_bonito(16)
+    arquivo_grafico(16)
+    # arquivo_grafico_de_txt()

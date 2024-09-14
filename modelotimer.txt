@@ -1,3 +1,5 @@
+#include <time.h>
+
 typedef struct {
     clock_t start;
     clock_t end;

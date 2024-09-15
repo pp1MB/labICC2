@@ -16,19 +16,7 @@ char *rand_str(int len){
     return s;
 }
 
-int main(){
-    int caso;
-    printf("Digite o numero do caso teste: ");
-    scanf("%d", &caso);
-
-    int n;
-    printf("Digite o numero de elementos: ");
-    scanf("%d", &n);
-
-    char* nome_arquivo;
-    nome_arquivo = (char*) malloc(100 * sizeof(char));
-    sprintf(nome_arquivo, "casos_teste_nr/caso%d.in", caso);
-
+void criar_caso(char *nome_arquivo, int n){
     FILE *arq = fopen(nome_arquivo, "w");
 
     fprintf(arq, "%d\n", n);
@@ -41,5 +29,21 @@ int main(){
 
     fclose(arq);
     free(nome_arquivo);
+}
+
+int main(){
+    int caso;
+    // printf("Digite o numero do caso teste: ");
+    // scanf("%d", &caso);
+
+    // int n;
+    // printf("Digite o numero de elementos: ");
+    // scanf("%d", &n);
+
+    for(int i = 1; i <= 50; i++){
+        char *nome_arquivo = (char*) malloc(100 * sizeof(char));
+        sprintf(nome_arquivo, "casos_teste_nr/%d.in", i);
+        criar_caso(nome_arquivo, 500 * i * i);
+    }
     return 0;
 }

@@ -1,10 +1,15 @@
 #include "pilha.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct no NO;
+typedef struct jogador{
+    char nome[50];
+    int pontuacao;
+} JOGADOR;
 
 struct no {
-    void *dados;
+    JOGADOR dados;
     NO *anterior;
 };
 
@@ -49,11 +54,12 @@ int pilha_tamanho(PILHA *pilha){
     return -1;
 }
 
-void* pilha_topo(PILHA *pilha){
+JOGADOR pilha_topo(PILHA *pilha){
     if(pilha != NULL && !pilha_vazia(pilha)){
         return pilha->topo->dados;
     }
-    return NULL;
+
+    exit(1);
 }
 
 void pilha_apagar(PILHA **pilha){
@@ -72,7 +78,7 @@ void pilha_apagar(PILHA **pilha){
     *pilha = NULL;
 }
 
-bool pilha_empilhar(PILHA *pilha, void *dados){
+bool pilha_empilhar(PILHA *pilha, JOGADOR dados){
     NO* pnovo = (NO*) malloc(sizeof(NO));
     if(pnovo != NULL){
         pnovo->dados = dados;
@@ -84,10 +90,10 @@ bool pilha_empilhar(PILHA *pilha, void *dados){
     return false;
 }
 
-void *pilha_desempilhar(PILHA *pilha){
+JOGADOR pilha_desempilhar(PILHA *pilha){
     if(pilha != NULL  && !(pilha_vazia(pilha))){
         NO* pno = pilha->topo;
-        void *dados = pilha->topo->dados;
+        JOGADOR dados = pilha->topo->dados;
         pilha->topo = pilha->topo->anterior;
         pno->anterior = NULL;
         free(pno);
@@ -95,5 +101,6 @@ void *pilha_desempilhar(PILHA *pilha){
         pilha->tamanho--;
         return dados;
     }
-    return NULL;
+
+    exit(1);
 }

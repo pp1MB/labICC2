@@ -3,8 +3,7 @@
 #include "pilha.h"
 #include <time.h>
 #include <string.h>
-
-typedef struct{
+typedef struct jogador{
     char nome[50];
     int pontuacao;
 } JOGADOR;
@@ -36,25 +35,54 @@ double stop_timer(Timer *timer) {
 // }
 
 
-void selection(JOGADOR *jog, int tam){
-    // PILHA *p = pilha_criar();
-    while(tam != 0){
-        int min_i = tam;
+// void selection(JOGADOR *jog, int tam){
+//     // PILHA *p = pilha_criar();
+//     while(tam != 0){
+//         int min_i = tam;
 
-        for(int i=tam; i >= 0; i--){
+//         for(int i=tam; i >= 0; i--){
+//             if(jog[min_i].pontuacao > jog[i].pontuacao)
+//                 min_i = i;
+
+//             else if(jog[min_i].pontuacao == jog[i].pontuacao)
+//                 if(strcmp(jog[min_i].nome, jog[i].nome) < 0)
+//                     min_i = i;
+//         }
+
+//         JOGADOR aux = jog[tam];
+//         jog[tam] = jog[min_i];
+//         jog[min_i] = aux;
+
+//         tam--;
+//     }
+
+//     return;
+// }
+
+void selection(JOGADOR *jog, int tam){
+    PILHA *p = pilha_criar();
+    while(tam != 0){
+        int min_i = 0;
+
+        for(int i = 1; i < tam; i++){
             if(jog[min_i].pontuacao > jog[i].pontuacao)
                 min_i = i;
 
             else if(jog[min_i].pontuacao == jog[i].pontuacao)
-                if(strcmp(jog[min_i].nome, jog[i].nome) == -1)
+                if(strcmp(jog[min_i].nome, jog[i].nome) < 0)
                     min_i = i;
         }
 
-        JOGADOR aux = jog[tam];
-        jog[tam] = jog[min_i];
-        jog[min_i] = aux;
+        pilha_empilhar(p, jog[min_i]);
+        jog[min_i] = jog[tam-1];
 
         tam--;
+    }
+
+    int i = 0;
+    while(!pilha_vazia(p)){
+        jog[i] = pilha_desempilhar(p);
+        i++;
     }
 
     return;

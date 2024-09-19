@@ -10,7 +10,7 @@ arquivo_saida_grafico = 'grafico.txt'
 
 caso_teste_txt = 'casoTesteMultiplicacao.txt'
 
-arquivo_casos_teste = 'casos_teste_nr'
+arquivo_casos_teste = 'casos_teste_nr2.0'
 
 
 # Executa o programa e captura a saída
@@ -67,6 +67,8 @@ def arquivo_grafico(n_casos_teste):
         # tempos.append((linhas1[1], linhas2[1]))
         tempos.append(linhas1[0])
 
+        print(f'{j}° Caso testado')
+
     with open(arquivo_saida_grafico, 'w') as f:
         for i in range(0, len(tempos)):
             f.write(f"{complexidades[i]} {tempos[i]} \n")
@@ -90,5 +92,5 @@ def arquivo_grafico_de_txt():
 
 if __name__ == '__main__':
     # arquivo_bonito(16)
-    arquivo_grafico(50)
+    arquivo_grafico(200)
     # arquivo_grafico_de_txt()

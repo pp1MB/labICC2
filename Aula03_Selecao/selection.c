@@ -59,6 +59,7 @@ double stop_timer(Timer *timer) {
 //     return;
 // }
 
+/* Selection Sort */
 void selection(JOGADOR *jog, int tam){
     PILHA *p = pilha_criar();
     while(tam != 0){
@@ -85,13 +86,15 @@ void selection(JOGADOR *jog, int tam){
         i++;
     }
 
+    pilha_apagar(&p);
+
     return;
 }
 
 int main(void){
     int n;
     scanf("%d", &n);
-    JOGADOR jog[n];
+    JOGADOR *jog = (JOGADOR *) malloc(sizeof(JOGADOR) * n);
 
     for(int i=0; i < n; i++){
         scanf("%s %d", jog[i].nome, &(jog[i].pontuacao));
@@ -100,13 +103,13 @@ int main(void){
     Timer t;
     start_timer(&t);
     selection(jog, n);
-    double tempo = stop_timer(&t);
+    printf("Tempo de execução: %f segundos\n", stop_timer(&t));
 
-    for(int i=0; i < n; i++){
-        printf("%s %d\n", jog[i].nome, jog[i].pontuacao);
-    }
+    // for(int i=0; i < n; i++){
+    //     printf("%s %d\n", jog[i].nome, jog[i].pontuacao);
+    // }
 
-    printf("Tempo de execução: %f segundos\n", tempo);
+    free(jog);
 
     return 0;
 }

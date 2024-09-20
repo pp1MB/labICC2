@@ -1,8 +1,8 @@
 import subprocess
 
 # Nome do executável do programa em C
-exec1 = './expi'
-exec2 = './expr'
+exec1 = './selection'
+exec2 = './shell'
 
 # Nome do arquivo onde a saída será salva
 arquivo_saida = 'tempos.txt'
@@ -30,15 +30,15 @@ def arquivo_bonito(n_casos_teste):
                 linhas1 = res1.stdout.strip().split('\n')
                 linhas2 = res2.stdout.strip().split('\n')
 
-                with open(arquivo_out) as a:
-                    out = a.read().rstrip('\n')
-                    if linhas1[0].strip() != out or linhas2[0].strip() != out:
-                        print(f"Esperado: {repr(out)}")
-                        print(f"Recebido 1: {repr(linhas1[0])}")
-                        print(f"Recebido 2: {repr(linhas2[0])}")
+                # with open(arquivo_out) as a:
+                #     out = a.read().rstrip('\n')
+                #     if linhas1[0].strip() != out or linhas2[0].strip() != out:
+                #         print(f"Esperado: {repr(out)}")
+                #         print(f"Recebido 1: {repr(linhas1[0])}")
+                #         print(f"Recebido 2: {repr(linhas2[0])}")
 
-                f.write(f"Tempo de Execução Iterativo: {linhas1[1]}\n")
-                f.write(f"Tempo de Execução Recursivo: {linhas2[1]}\n")
+                f.write(f"{linhas1[0]} (Selection Sort)\n")
+                f.write(f"{linhas2[0]} (Shell Sort)\n")
                 f.write('\n')
 
 
@@ -82,6 +82,6 @@ def arquivo_grafico_de_txt():
 
 
 if __name__ == '__main__':
-    # arquivo_bonito(16)
-    arquivo_grafico(16)
-    # arquivo_grafico_de_txt()
+    arquivo_bonito(10)
+    # arquivo_grafico(16)
+    # arquivo_grafico_de_txt(10)

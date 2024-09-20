@@ -1,0 +1,90 @@
+1° Caso:
+Tempo de execução: 0.000003 segundos (Selection Sort)
+Tempo de execução: 0.000006 (Shell Sort)
+
+Tempo de execução: 0.000004 segundos (Selection Sort)
+Tempo de execução: 0.000006 (Shell Sort)
+
+Tempo de execução: 0.000003 segundos (Selection Sort)
+Tempo de execução: 0.000002 (Shell Sort)
+
+2° Caso:
+Tempo de execução: 0.000004 segundos (Selection Sort)
+Tempo de execução: 0.000004 (Shell Sort)
+
+Tempo de execução: 0.000009 segundos (Selection Sort)
+Tempo de execução: 0.000003 (Shell Sort)
+
+Tempo de execução: 0.000008 segundos (Selection Sort)
+Tempo de execução: 0.000007 (Shell Sort)
+
+3° Caso:
+Tempo de execução: 0.000023 segundos (Selection Sort)
+Tempo de execução: 0.000012 (Shell Sort)
+
+Tempo de execução: 0.000049 segundos (Selection Sort)
+Tempo de execução: 0.000027 (Shell Sort)
+
+Tempo de execução: 0.000049 segundos (Selection Sort)
+Tempo de execução: 0.000037 (Shell Sort)
+
+4° Caso:
+Tempo de execução: 0.000560 segundos (Selection Sort)
+Tempo de execução: 0.000072 (Shell Sort)
+
+Tempo de execução: 0.000520 segundos (Selection Sort)
+Tempo de execução: 0.000160 (Shell Sort)
+
+Tempo de execução: 0.000710 segundos (Selection Sort)
+Tempo de execução: 0.000167 (Shell Sort)
+
+5° Caso:
+Tempo de execução: 0.332130 segundos (Selection Sort)
+Tempo de execução: 0.016290 (Shell Sort)
+
+Tempo de execução: 0.347252 segundos (Selection Sort)
+Tempo de execução: 0.005293 (Shell Sort)
+
+Tempo de execução: 0.305155 segundos (Selection Sort)
+Tempo de execução: 0.016864 (Shell Sort)
+
+6° Caso:
+Tempo de execução: 0.463462 segundos (Selection Sort)
+Tempo de execução: 0.019632 (Shell Sort)
+
+Tempo de execução: 0.432514 segundos (Selection Sort)
+Tempo de execução: 0.006716 (Shell Sort)
+
+Tempo de execução: 0.401974 segundos (Selection Sort)
+Tempo de execução: 0.020326 (Shell Sort)
+
+7° Caso:
+Tempo de execução: 15.023298 segundos (Selection Sort)
+Tempo de execução: 0.060864 (Shell Sort)
+
+Tempo de execução: 15.205384 segundos (Selection Sort)
+Tempo de execução: 0.051861 (Shell Sort)
+
+Tempo de execução: 15.012573 segundos (Selection Sort)
+Tempo de execução: 0.059354 (Shell Sort)
+
+8° Caso:
+Tempo de execução: 26.455711 segundos (Selection Sort)
+Tempo de execução: 0.063506 (Shell Sort)
+
+Tempo de execução: 27.166242 segundos (Selection Sort)
+Tempo de execução: 0.066794 (Shell Sort)
+
+Tempo de execução: 27.062608 segundos (Selection Sort)
+Tempo de execução: 0.055689 (Shell Sort)
+
+9° Caso:
+Tempo de execução: 3.551804 segundos (Selection Sort)
+Tempo de execução: 0.023479 (Shell Sort)
+
+Tempo de execução: 3.673682 segundos (Selection Sort)
+Tempo de execução: 0.040361 (Shell Sort)
+
+Tempo de execução: 3.609086 segundos (Selection Sort)
+Tempo de execução: 0.024136 (Shell Sort)
+

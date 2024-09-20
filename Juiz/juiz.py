@@ -10,6 +10,8 @@ arquivo_saida_grafico = 'grafico.txt'
 
 caso_teste_txt = 'casoTesteMultiplicacao.txt'
 
+arquivo_casos_teste = 'casos_teste_nr'
+
 
 # Executa o programa e captura a saída
 def arquivo_bonito(n_casos_teste):
@@ -43,27 +45,25 @@ def arquivo_bonito(n_casos_teste):
 
 
 def arquivo_grafico(n_casos_teste):
+    tempos = []
+
+    for j in range(1, n_casos_teste):
+        arquivo_in = f"{arquivo_casos_teste}/{j}.in"
+
+        with open(arquivo_in, 'r') as a:
+            argumentos = a.read()
+
+        res1 = subprocess.run([exec1], input=argumentos, capture_output=True, text=True, check=True)
+        res2 = subprocess.run([exec2], input=argumentos, capture_output=True, text=True, check=True)
+        linhas1 = res1.stdout.strip().split('\n')
+        linhas2 = res2.stdout.strip().split('\n')
+
+        tempos.append((linhas1[1], linhas2[1]))
+
     with open(arquivo_saida_grafico, 'w') as f:
-        for j in range(1, n_casos_teste):
-            arquivo_in = f"casoteste/{j}.in"
-
-            with open(arquivo_in, 'r') as a:
-                argumentos = a.read().split()
-                f.write(f"{len(argumentos[1])}\n")
-
-        for j in range(1, n_casos_teste):
-            arquivo_in = f"casoteste/{j}.in"
-
-            with open(arquivo_in, 'r') as a:
-                argumentos = a.read()
-
-            res1 = subprocess.run([exec1], input=argumentos, capture_output=True, text=True, check=True)
-            res2 = subprocess.run([exec2], input=argumentos, capture_output=True, text=True, check=True)
-            linhas1 = res1.stdout.strip().split('\n')
-            linhas2 = res2.stdout.strip().split('\n')
-
-            f.write(f"{linhas1[1]} ")
-            f.write(f"{linhas2[1]}\n")
+        for i in range(1, len(tempos)):
+            f.write(f"{tempos[i][0]} ")
+            f.write(f"{tempos[i][1]}\n")
 
 
 def arquivo_grafico_de_txt():

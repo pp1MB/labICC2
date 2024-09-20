@@ -1,27 +1,11 @@
 import matplotlib.pyplot as plt
 
 
+n_arquivo = 'Juiz/grafico_aula3_2.1'
+
 def plotar_grafico(x, y):
-# Create the x-axis values (index for each time entry)
-    x_values = range(1, len(x) + 1)
-
-    # First plot for Program A
-    plt.figure(1)
-    plt.bar(x_values, x, label='Program A Time')
-    plt.xlabel('Problem Instance Index')
-    plt.ylabel('Time (s)')
-    plt.title('Execution Time: Program A')
-    plt.legend()
-
-    # Second plot for Program B
-    plt.figure(2)
-    plt.bar(x_values, y, label='Program B Time')
-    plt.xlabel('Problem Instance Index')
-    plt.ylabel('Time (s)')
-    plt.title('Execution Time: Program B')
-    plt.legend()
-
-    # Display both plots
+    x_values = range(len(x))
+    plt.plot(x_values, y)
     plt.show()
 
 
@@ -29,10 +13,10 @@ def plotar_grafico_barras():
     x = []
     y = []
 
-    arquivo = open('grafico.txt', 'r')
+    arquivo = open(f'{n_arquivo}.txt', 'r')
     for linha in arquivo:
         x.append(float(linha.split(' ')[0]))
-        y.append(float(linha.split(' ')[1].replace('\n', '')))
+        y.append(float(linha.split(' ')[1].replace('\n', '')) * 1000)
 
     arquivo.close()
 

@@ -71,15 +71,15 @@ int main(){
         scanf("%d", &jogadores[i].pontuacao);
     }
 
-    //start_timer(&timer);
+    start_timer(&timer);
     shellSort(jogadores, n);
 
-    //double tempo = stop_timer(&timer);
-    //printf("%f\n", tempo);
+    double tempo = stop_timer(&timer);
+    printf("%f\n", tempo);
 
-    for(int i = 0; i < n; i++){
-        printf("%s %d\n", jogadores[i].nome, jogadores[i].pontuacao);
-    }
+    //for(int i = 0; i < n; i++){
+    //    printf("%s %d\n", jogadores[i].nome, jogadores[i].pontuacao);
+    //}
     
     free(jogadores);
 

@@ -77,11 +77,6 @@ int main(){
     double tempo = stop_timer(&timer);
     printf("%f\n", tempo);
 
-<<<<<<< HEAD
-    //for(int i = 0; i < n; i++){
-    //    printf("%s %d\n", jogadores[i].nome, jogadores[i].pontuacao);
-    //}
-=======
     // for(int i = 0; i < n; i++){
     //     printf("Player %d: %s, Score: %d\n", i+1, jogadores[i].nome, jogadores[i].pontuacao);
     // }
@@ -89,7 +84,6 @@ int main(){
     for(int i = 0; i < n; i++){
         printf("%s %d\n", jogadores[i].nome, jogadores[i].pontuacao);
     }
->>>>>>> 8dfd9b92d9ad95a784f9b2a7ab3b673a17e0f745
     
     free(jogadores);
 

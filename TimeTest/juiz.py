@@ -2,9 +2,9 @@ import subprocess
 from os import mkdir
 
 # Nome do diretório onde o programa em C está
-nome_relativo = 'Aula03_Selecao/'
+nome_relativo = 'Aula04_Notaveis/'
 pasta_juiz = 'TimeTest/'
-nome_pasta_resp = 'Aula03/'
+nome_pasta_resp = 'Aula04/'
 
 # Nome do executável do programa em C
 exec1 = './' + nome_relativo + '/a'
@@ -91,6 +91,6 @@ def arquivo_grafico(n_casos_teste):
 if __name__ == '__main__':
     start()
 
-    # arquivo_bonito(16)
-    arquivo_grafico(1)
+    # arquivo_bonito(10)
+    arquivo_grafico(10)
     # arquivo_grafico_de_txt()

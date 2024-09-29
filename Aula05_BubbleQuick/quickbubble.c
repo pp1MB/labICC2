@@ -1,5 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+typedef struct {
+    clock_t start;
+    clock_t end;
+} Timer;
+
+void start_timer(Timer *timer) {
+    timer->start = clock();
+}
+
+double stop_timer(Timer *timer) {
+    timer->end = clock();
+    return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
+}
 
 /* Struct para armazenar as informações dos pratos. */
 typedef struct prato_{
@@ -45,7 +60,7 @@ void bSort(PRATO *pratos, int n){
                 troca = 1;
                 aux = pratos[i-1];
                 pratos[i-1] = pratos[i];
-                pratos[i] = aux;
+                pratos[i] = aux;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
             }
     }
 
@@ -61,12 +76,17 @@ int main(void){
         scanf("%d %d %s", &pratos[i].prioridade, &pratos[i].tempo, pratos[i].nome);
 
     /* Sort */
-    qSort(pratos, 0, n-1);
-    // bSort(pratos, n);
+    Timer timer;
+    start_timer(&timer);
+
+    // qSort(pratos, 0, n-1);
+    bSort(pratos, n);
+
+    printf("Tempo de execução BubbleSort: %f segundos\n", stop_timer(&timer));
 
     /* Print dos maiores pratos. */
-    for(int i = 0; i < n; i++)
-       printf("%s\n", pratos[i].nome);
+    // for(int i = 0; i < n; i++)
+    //    printf("%s\n", pratos[i].nome);
 
     free(pratos);
 

@@ -2,6 +2,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <time.h>
+
+typedef struct {
+    clock_t start;
+    clock_t end;
+} Timer;
+
+void start_timer(Timer *timer) {
+    timer->start = clock();
+}
+
+double stop_timer(Timer *timer) {
+    timer->end = clock();
+    return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
+}
+
 typedef struct aluno_{
     char nome[50];
     float aumento;
@@ -50,6 +66,8 @@ int main(){
 
     scanf("%s %d", nome_arquivo, &k);
 
+    Timer timer;
+    start_timer(&timer);
 
     FILE *arq = fopen(nome_arquivo, "r");   
     if(arq == NULL){
@@ -77,6 +95,8 @@ int main(){
 
     qsort(alunos, i, sizeof(ALUNO), comparar);
 
+    printf("Tempo de execução: %f segundos\n", stop_timer(&timer));
+
     // int j = 0;
     // for(; j < k; j++){
     //     printf("%s %f\n", alunos[j].nome, alunos[j].aumento);
@@ -87,15 +107,15 @@ int main(){
     //     j++;
     // }
 
-    int j = 0;
-    for(; j < k; j++){
-        printf("%s\n", alunos[j].nome);
-    }
+    // int j = 0;
+    // for(; j < k; j++){
+    //     printf("%s\n", alunos[j].nome);
+    // }
 
-    while(j < i && alunos[j].aumento == alunos[j - 1].aumento){
-        printf("%s\n", alunos[j].nome);
-        j++;
-    }
+    // while(j < i && alunos[j].aumento == alunos[j - 1].aumento){
+    //     printf("%s\n", alunos[j].nome);
+    //     j++;
+    // }
 
     free(alunos);
     fclose(arq);

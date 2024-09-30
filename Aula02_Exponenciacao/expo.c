@@ -1,3 +1,10 @@
+/* Grupo
+ * Pedro Henrique de Sousa Prestes - 15507819
+ * Pedro Lunkes Villela - 15484287 */
+
+/* Trabalho 2 - Exponenciação
+ * Exponenciação Iterativa x Exponenciação Recursiva*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

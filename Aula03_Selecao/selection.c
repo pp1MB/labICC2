@@ -1,3 +1,10 @@
+/* Grupo
+ * Pedro Henrique de Sousa Prestes - 15507819
+ * Pedro Lunkes Villela - 15484287 */
+
+/* Trabalho 3 - Selection
+ * Selection Sort x Shell Sort */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "pilha.h"

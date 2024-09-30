@@ -14,6 +14,7 @@ typedef struct {
     clock_t end;
 } Timer;
 
+
 void start_timer(Timer *timer) {
     timer->start = clock();
 }

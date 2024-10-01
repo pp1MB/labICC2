@@ -79,10 +79,10 @@ int main(void){
     Timer timer;
     start_timer(&timer);
 
-    // qSort(pratos, 0, n-1);
-    bSort(pratos, n);
+    qSort(pratos, 0, n-1);
+    //bSort(pratos, n);
 
-    printf("Tempo de execução BubbleSort: %f segundos\n", stop_timer(&timer));
+    printf("%d %f\n", n, stop_timer(&timer));
 
     /* Print dos maiores pratos. */
     // for(int i = 0; i < n; i++)

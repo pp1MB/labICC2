@@ -73,15 +73,13 @@ int main(void) {
     for(int i = 0; i < n; i++)
         scanf("%d %d %s", &((pratos + i)->prioridade), &((pratos + i)->tempo), ((pratos + i)->nome));
 
-    // Timer timer;
-    // start_timer(&timer);
-
+Timer timer;
+    start_timer(&timer);
     heapSort(pratos, n);
+    printf("Tempo de execução HeapSort %lf\n", stop_timer(&timer));
 
-    // printf("%d %f\n", n, (stop_timer(&timer)));
-
-    for(int i = n - 1; i >= 0; i--)
-        printf("%s\n", (pratos + i)->nome);
+    // for(int i = n - 1; i >= 0; i--)
+    //     printf("%s\n", (pratos + i)->nome);
 
     free(pratos);
 

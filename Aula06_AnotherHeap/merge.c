@@ -74,13 +74,13 @@ int main(void){
         scanf("%d %d %s", &pratos[i].prioridade, &pratos[i].tempo, pratos[i].nome);
 
     /* Sort */
-    // Timer timer;
-    // start_timer(&timer);
+    Timer timer;
+    start_timer(&timer);
     mergeSort(pratos, 0, n-1);
-    // printf("%d %lf\n", n, stop_timer(&timer));
+    printf("Tempo de execução MergeSort %lf\n", stop_timer(&timer));
 
-    for(int i = 0; i < n; i++)
-        printf("%s\n", pratos[i].nome);
+    // for(int i = 0; i < n; i++)
+    //     printf("%s\n", pratos[i].nome);
 
     free(pratos);
 

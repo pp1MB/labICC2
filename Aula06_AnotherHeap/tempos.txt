@@ -1,0 +1,100 @@
+1° Caso
+Tempo de execução MergeSort 0.000003
+Tempo de execução HeapSort 0.000002
+
+Tempo de execução MergeSort 0.000003
+Tempo de execução HeapSort 0.000001
+
+Tempo de execução MergeSort 0.000002
+Tempo de execução HeapSort 0.000003
+
+2° Caso
+Tempo de execução MergeSort 0.000004
+Tempo de execução HeapSort 0.000005
+
+Tempo de execução MergeSort 0.000008
+Tempo de execução HeapSort 0.000007
+
+Tempo de execução MergeSort 0.000008
+Tempo de execução HeapSort 0.000002
+
+3° Caso
+Tempo de execução MergeSort 0.000084
+Tempo de execução HeapSort 0.000157
+
+Tempo de execução MergeSort 0.000163
+Tempo de execução HeapSort 0.000157
+
+Tempo de execução MergeSort 0.000172
+Tempo de execução HeapSort 0.000216
+
+4° Caso
+Tempo de execução MergeSort 0.000194
+Tempo de execução HeapSort 0.000191
+
+Tempo de execução MergeSort 0.000194
+Tempo de execução HeapSort 0.000192
+
+Tempo de execução MergeSort 0.000588
+Tempo de execução HeapSort 0.000607
+
+5° Caso
+Tempo de execução MergeSort 0.000045
+Tempo de execução HeapSort 0.000033
+
+Tempo de execução MergeSort 0.000033
+Tempo de execução HeapSort 0.000025
+
+Tempo de execução MergeSort 0.000032
+Tempo de execução HeapSort 0.000013
+
+6° Caso
+Tempo de execução MergeSort 0.000226
+Tempo de execução HeapSort 0.000351
+
+Tempo de execução MergeSort 0.000340
+Tempo de execução HeapSort 0.000351
+
+Tempo de execução MergeSort 0.000154
+Tempo de execução HeapSort 0.000350
+
+7° Caso
+Tempo de execução MergeSort 0.005188
+Tempo de execução HeapSort 0.005433
+
+Tempo de execução MergeSort 0.004304
+Tempo de execução HeapSort 0.002103
+
+Tempo de execução MergeSort 0.001972
+Tempo de execução HeapSort 0.002014
+
+8° Caso
+Tempo de execução MergeSort 0.009346
+Tempo de execução HeapSort 0.010368
+
+Tempo de execução MergeSort 0.025619
+Tempo de execução HeapSort 0.029020
+
+Tempo de execução MergeSort 0.009495
+Tempo de execução HeapSort 0.010771
+
+9° Caso
+Tempo de execução MergeSort 0.050297
+Tempo de execução HeapSort 0.057139
+
+Tempo de execução MergeSort 0.051503
+Tempo de execução HeapSort 0.058397
+
+Tempo de execução MergeSort 0.050720
+Tempo de execução HeapSort 0.056100
+
+10° Caso
+Tempo de execução MergeSort 0.053169
+Tempo de execução HeapSort 0.055588
+
+Tempo de execução MergeSort 0.049765
+Tempo de execução HeapSort 0.053954
+
+Tempo de execução MergeSort 0.055818
+Tempo de execução HeapSort 0.062255
+

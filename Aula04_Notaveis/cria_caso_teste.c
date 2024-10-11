@@ -3,7 +3,7 @@
 
 
 char* cria_nome(){
-    int tam = rand()%20 + 2;
+    int tam = 5;
     char *nome = (char*) malloc(tam*sizeof(char));
     
     for(int i = 0; i < tam; i++){
@@ -22,14 +22,19 @@ int main(){
     int n;
     scanf("%d", &n);
 
-    FILE* arq = fopen("notas.csv", "w");
+    for(int j = 0;j < n; j++){
+        char nome_arquivo[50];
+        sprintf(nome_arquivo, "casos_teste/%d.csv", j);
+        FILE* arq = fopen(nome_arquivo, "w");
 
-    for(int i = 0; i < n; i++){
-        char* nome = cria_nome();
-        float nota1 = cria_nota();
-        float nota2 = cria_nota();
-        float nota3 = cria_nota();
+        fprintf(arq, "nome,nota1,nota2,nota3\n");
+        for(int i = 0; i < j * 5000 + 5000; i++){
+            char* nome = cria_nome();
+            float nota1 = cria_nota();
+            float nota2 = cria_nota();
+            float nota3 = cria_nota();
 
-        fprintf(arq, "%s,%.2f,%.2f,%.2f\n", nome, nota1, nota2, nota3);
+            fprintf(arq, "%s,%.2f,%.2f,%.2f\n", nome, nota1, nota2, nota3);
+        }
     }
 }

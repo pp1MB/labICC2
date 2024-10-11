@@ -1,10 +1,22 @@
 import numpy as np
-
 import matplotlib.pyplot as plt
+import argparse
 
-pasta_juiz = 'TimeTest/'
-nome_pasta_resp = 'Aula05/'
-n_arquivo = pasta_juiz + nome_pasta_resp + 'bubble'
+
+def getArguments():
+    parser = argparse.ArgumentParser()
+
+    #adicionamos o type = int abaixo
+    parser.add_argument("caminhoTxt")
+    parser.add_argument("nomeGrafico")
+    parser.add_argument("diretorioGrafico")
+
+    args = parser.parse_args()
+    return args
+
+
+args = getArguments()
+n_arquivo = args.caminhoTxt
 
 def plotar_grafico(x, y):
     scatter = plt.scatter(x, y, s=10, c=y, cmap='viridis')
@@ -20,6 +32,7 @@ def plotar_grafico(x, y):
     plt.plot(x_fit, y_fit, color='r', linestyle='--', label='Fitted Function')
     
     plt.legend()
+    plt.savefig(f'{args.diretorioGrafico}/{args.nomeGrafico}.png')
     plt.show()
 
 

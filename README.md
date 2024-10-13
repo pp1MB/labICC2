@@ -9,5 +9,8 @@ A proposta da disciplina é a implementação de algoritmos variados e a compara
 > Implemente a exponenciação de duas formas: uma iterativa $O(n)$ e outra utilizando o método de divisão e conquista (exponenciação rápida) $O(\log n)$.
 
 ## Trabalho 3 - Seleção
-> Implemente o algoritmo de ordenação por seleção e Shell Sort no registro de jogador. Utilize um TAD de pilha para a implementação do algoritmo de ordenação por seleção. Ordenar no formato nome nota `nome nota`, onde nome é uma string de no máximo 50 caracteres e nota um inteiro entre 0 e 120. Se houver dois jogadores com a mesma nota, utilize a ordem lexicográfica de seus nomes como critério de desempate.
+> Implemente o algoritmo de ordenação por seleção $O(n^{2})$ e Shell Sort $O(n^{3/2}) no registro de jogador. Utilize um TAD de pilha para a implementação do algoritmo de ordenação por seleção. Ordenar no formato nome nota `nome nota`, onde nome é uma string de no máximo 50 caracteres e nota um inteiro entre 0 e 120. Se houver dois jogadores com a mesma nota, utilize a ordem lexicográfica de seus nomes como critério de desempate.
+
+## Trabalho 4 - Notáveis
+> Leia um arquivo planilha .csv das notas de uma turma de alunos e imprima os `k` alunos com maior aumento de nota.
 

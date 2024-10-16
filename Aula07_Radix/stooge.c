@@ -44,6 +44,7 @@ int main(void){
 }
 
 void stoogeSort(CARTA *baralho, int inicio, int fim){
+    // printf("%d %d\n", inicio, fim);
     if(compararCartas(baralho[inicio], baralho[fim])){
         CARTA temp = baralho[inicio];
         baralho[inicio] = baralho[fim];

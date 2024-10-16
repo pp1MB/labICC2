@@ -2,6 +2,20 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
+typedef struct {
+    clock_t start;
+    clock_t end;
+} Timer;
+
+void start_timer(Timer *timer) {
+    timer->start = clock();
+}
+
+double stop_timer(Timer *timer) {
+    timer->end = clock();
+    return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
+}
 
 /* Struct carta utilizada para armazenar o naipe e sua sequência de cartas. */
 typedef struct {
@@ -27,7 +41,10 @@ int main(void){
         baralho[i] = carta;
     }
     
+    Timer tempo;
+    start_timer(&tempo);
     stoogeSort(baralho, 0, cartas - 1);
+    printf("Tempo de execução: %lf segundos\n", stop_timer(&tempo));
 
     for(int i = 0; i < cartas; i++){
         printf("%s %s;", baralho[i].naipe, baralho[i].valor);

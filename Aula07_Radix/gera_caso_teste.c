@@ -37,7 +37,7 @@ int main() {
         int num_strings = 10 + i * 3;
         int string_length = 5 + (i / 20);
 
-        fprintf(file, "%d %d\n", num_strings, string_length);
+        fprintf(file, "%d %d\n", num_strings, string_length - 1);
         for (int j = 0; j < num_strings; ++j) {
             char *str = (char *) malloc(string_length * sizeof(char));
             generate_random_number_string(str, string_length);

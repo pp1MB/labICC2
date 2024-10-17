@@ -16,8 +16,6 @@ double stop_timer(Timer *timer) {
     return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
 }
 
-#define COUNT 29
-
 /* Struct carta utilizada para armazenar o naipe e sua sequência de cartas. */
 typedef struct {
     char naipe[4];
@@ -49,25 +47,25 @@ int main(void){
 
 void radix_sort(CARTA *baralho, int cartas, int n){
     // Printa a sequência original
-    for(int i = 0; i < cartas; i++)
-        printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+    // for(int i = 0; i < cartas; i++)
+    //     printf("%s %s;", baralho[i].naipe, baralho[i].valor);
 
-    printf("\n");
+    // printf("\n");
 
     Timer tempo;
     double tempo_s = 0;
     // Ordena sequência de cartas.
     for(int i = n - 1; i >= 0; i--){
-        printf("Após ordenar o %d° dígito dos valores:\n", i+1);
+        // printf("Após ordenar o %d° dígito dos valores:\n", i+1);
 
         start_timer(&tempo);
         baralho = count_sort(baralho, cartas, i);
         tempo_s += stop_timer(&tempo);
 
-        for(int i = 0; i < cartas; i++)
-            printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+        // for(int i = 0; i < cartas; i++)
+        //     printf("%s %s;", baralho[i].naipe, baralho[i].valor);
         
-        printf("\n");
+        // printf("\n");
     }
 
     // Ordena naipe de cartas.
@@ -77,7 +75,7 @@ void radix_sort(CARTA *baralho, int cartas, int n){
     tempo_s += stop_timer(&tempo);
 
     for(int i = 0; i < cartas; i++){
-        printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+        // printf("%s %s;", baralho[i].naipe, baralho[i].valor);
         free(baralho[i].valor);
         baralho[i].valor = NULL;
     }
@@ -85,7 +83,7 @@ void radix_sort(CARTA *baralho, int cartas, int n){
     free(baralho);
     baralho = NULL;
 
-    printf("\n");
+    // printf("\n");
 
     //printf("Tempo de execução: %lf segundos\n", tempo_s);
 
@@ -95,39 +93,28 @@ void radix_sort(CARTA *baralho, int cartas, int n){
 /* Count Sort para a sequência de cartas. */
 CARTA *count_sort(CARTA *baralho, int n, int k){
     CARTA *saida = (CARTA *) malloc(sizeof(CARTA) * n);
-    int *count = (int *) calloc(COUNT, sizeof(int));
-
+    char seq[10] = {'4', '5', '6', '7', 'Q', 'J', 'K', 'A', '2', '3'};
+    int count[10] = {0};
+    
     for(int i = 0; i < n; i++){
-        int index = baralho[i].valor[k] - '4';
-
-        if(index < 0)
-            index = COUNT - 1 + index;
-        
-        if(index == 13) index = 24;
-        
+        int index;
+        for(index = 0; index < 10 && baralho[i].valor[k] != seq[index]; index++); 
         count[index]++;
     }
-
-    count[0]--;    
-    for(int i = 1;i < COUNT;i++)
+ 
+    for(int i = 1; i < 10; i++)
         count[i] += count[i - 1];
 
-    for(int i = n - 1;i >= 0;i--){
-        int index = baralho[i].valor[k] - '4';
+    for(int i = n - 1; i >= 0; i--){
+        int index;
+        for(index = 0; index < 10 && baralho[i].valor[k] != seq[index]; index++); 
 
-        if(index < 0)
-            index = COUNT - 1 + index;
-        
-        if(index == 13) index = 24;
-
-        saida[count[index]] = baralho[i];
+        saida[count[index] - 1] = baralho[i];
         count[index]--;
     }
 
     free(baralho);
     baralho = NULL;
-    free(count);
-    count = NULL;
 
     return saida;
 }

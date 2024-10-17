@@ -1,0 +1,52 @@
+1° Caso
+Tempo de execução Radix Sort: 0.000011 segundos
+Tempo de execução Stooge Sort: 0.000001 segundos
+
+Tempo de execução Radix Sort: 0.000007 segundos
+Tempo de execução Stooge Sort: 0.000003 segundos
+
+Tempo de execução Radix Sort: 0.000002 segundos
+Tempo de execução Stooge Sort: 0.000001 segundos
+
+2° Caso
+Tempo de execução Radix Sort: 0.000008 segundos
+Tempo de execução Stooge Sort: 0.000020 segundos
+
+Tempo de execução Radix Sort: 0.000008 segundos
+Tempo de execução Stooge Sort: 0.000017 segundos
+
+Tempo de execução Radix Sort: 0.000007 segundos
+Tempo de execução Stooge Sort: 0.000017 segundos
+
+3° Caso
+Tempo de execução Radix Sort: 0.000136 segundos
+Tempo de execução Stooge Sort: 5.292695 segundos
+
+Tempo de execução Radix Sort: 0.000525 segundos
+Tempo de execução Stooge Sort: 5.254897 segundos
+
+Tempo de execução Radix Sort: 0.000487 segundos
+Tempo de execução Stooge Sort: 5.374034 segundos
+
+4° Caso
+Tempo de execução Radix Sort: 0.001674 segundos
+Tempo de execução Stooge Sort: 0.014519 segundos
+
+Tempo de execução Radix Sort: 0.001730 segundos
+Tempo de execução Stooge Sort: 0.044718 segundos
+
+Tempo de execução Radix Sort: 0.001925 segundos
+Tempo de execução Stooge Sort: 0.015509 segundos
+
+5° Caso
+Tempo de execução Radix Sort: 0.001694 segundos
+Tempo de execução Stooge Sort: 1.748199 segundos
+
+Tempo de execução Radix Sort: 0.001791 segundos
+Tempo de execução Stooge Sort: 1.698001 segundos
+
+Tempo de execução Radix Sort: 0.003977 segundos
+Tempo de execução Stooge Sort: 1.796248 segundos
+
+6° Caso
+Tempo de execução Radix Sort: 0.004997 segundos

@@ -16,8 +16,6 @@ double stop_timer(Timer *timer) {
     return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
 }
 
-#define COUNT 29
-
 /* Struct carta utilizada para armazenar o naipe e sua sequência de cartas. */
 typedef struct {
     char naipe[4];
@@ -87,7 +85,7 @@ void radix_sort(CARTA *baralho, int cartas, int n){
 
     // printf("\n");
 
-    printf("%d %lf\n", cartas * n, tempo_s);
+    printf("%d %lf\n", n * cartas, tempo_s);
 
     return;
 }
@@ -95,39 +93,28 @@ void radix_sort(CARTA *baralho, int cartas, int n){
 /* Count Sort para a sequência de cartas. */
 CARTA *count_sort(CARTA *baralho, int n, int k){
     CARTA *saida = (CARTA *) malloc(sizeof(CARTA) * n);
-    int *count = (int *) calloc(COUNT, sizeof(int));
-
+    char seq[10] = {'4', '5', '6', '7', 'Q', 'J', 'K', 'A', '2', '3'};
+    int count[10] = {0};
+    
     for(int i = 0; i < n; i++){
-        int index = baralho[i].valor[k] - '4';
-
-        if(index < 0)
-            index = COUNT - 1 + index;
-        
-        if(index == 13) index = 24;
-        
+        int index;
+        for(index = 0; index < 10 && baralho[i].valor[k] != seq[index]; index++); 
         count[index]++;
     }
-
-    count[0]--;    
-    for(int i = 1;i < COUNT;i++)
+ 
+    for(int i = 1; i < 10; i++)
         count[i] += count[i - 1];
 
-    for(int i = n - 1;i >= 0;i--){
-        int index = baralho[i].valor[k] - '4';
+    for(int i = n - 1; i >= 0; i--){
+        int index;
+        for(index = 0; index < 10 && baralho[i].valor[k] != seq[index]; index++); 
 
-        if(index < 0)
-            index = COUNT - 1 + index;
-        
-        if(index == 13) index = 24;
-
-        saida[count[index]] = baralho[i];
+        saida[count[index] - 1] = baralho[i];
         count[index]--;
     }
 
     free(baralho);
     baralho = NULL;
-    free(count);
-    count = NULL;
 
     return saida;
 }

@@ -47,25 +47,25 @@ int main(void){
 
 void radix_sort(CARTA *baralho, int cartas, int n){
     // Printa a sequência original
-    // for(int i = 0; i < cartas; i++)
-    //     printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+    for(int i = 0; i < cartas; i++)
+        printf("%s %s;", baralho[i].naipe, baralho[i].valor);
 
-    // printf("\n");
+    printf("\n");
 
     Timer tempo;
     double tempo_s = 0;
     // Ordena sequência de cartas.
     for(int i = n - 1; i >= 0; i--){
-        // printf("Após ordenar o %d° dígito dos valores:\n", i+1);
+        printf("Após ordenar o %d° dígito dos valores:\n", i+1);
 
         start_timer(&tempo);
         baralho = count_sort(baralho, cartas, i);
         tempo_s += stop_timer(&tempo);
 
-        // for(int i = 0; i < cartas; i++)
-        //     printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+        for(int i = 0; i < cartas; i++)
+            printf("%s %s;", baralho[i].naipe, baralho[i].valor);
         
-        // printf("\n");
+        printf("\n");
     }
 
     // Ordena naipe de cartas.
@@ -75,7 +75,7 @@ void radix_sort(CARTA *baralho, int cartas, int n){
     tempo_s += stop_timer(&tempo);
 
     for(int i = 0; i < cartas; i++){
-        // printf("%s %s;", baralho[i].naipe, baralho[i].valor);
+        printf("%s %s;", baralho[i].naipe, baralho[i].valor);
         free(baralho[i].valor);
         baralho[i].valor = NULL;
     }
@@ -83,7 +83,7 @@ void radix_sort(CARTA *baralho, int cartas, int n){
     free(baralho);
     baralho = NULL;
 
-    // printf("\n");
+    printf("\n");
 
     //printf("Tempo de execução: %lf segundos\n", tempo_s);
 

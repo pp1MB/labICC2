@@ -1,3 +1,12 @@
+# Nome dos graficos:
+Ga="radixGraph"
+Gb="stoogeGraph"
+
+Ta="radixSortT"
+Tb="stoogeSortT"
+
+dir="../TimeTest/Aula07"
+
 # Nome dos executáveis dos sorts: a e b
 Na="radix.c"
 Nb="stooge.c"
@@ -51,36 +60,36 @@ if [[ "$resposta_graficos" == "s" || "$resposta_graficos" == "S" ]]; then
         echo "Teste de tempo do sort a"
         gcc $NaT -o aT
 
-        ./aT < "casos_teste/1.in" > radixGraph.txt
+        ./aT < "casos_teste/1.in" > "$Ta.txt"
         for i in $(seq 2 "$num_testes"); do
             echo "$i° Caso"
-            ./aT < "casos_teste/$i.in" >> radixGraph.txt
+            ./aT < "casos_teste/$i.in" >> "$Ta.txt"
         done
-        python3 ../TimeTest/grafico.py radixGraph radixSortT ../TimeTest/Aula6
+        python3 ../TimeTest/grafico.py $Ta $Ga $dir
     elif [[ "$exec_choice" == "2" ]]; then
         echo "Teste de tempo do sort b"
         gcc $NbT -o bT
 
-        ./bT < "casos_teste/1.in" > heapGraph.txt
+        ./bT < "casos_teste/1.in" > "$Tb.txt"
         for i in $(seq 2 "$num_testes"); do
             echo "$i° Caso"
-            ./bT < "casos_teste/$i.in" >> heapGraph.txt
+            ./bT < "casos_teste/$i.in" >> "$Tb.txt"
         done
-        python3 ../TimeTest/grafico.py heapGraph heapSortT ../TimeTest/Aula6
+        python3 ../TimeTest/grafico.py $Tb $Gb $dir
     elif [[ "$exec_choice" == "12" ]]; then
         echo "Teste de tempo dos sorts a e b"
         gcc $NaT -o aT
         gcc $NbT -o bT
 
-        ./aT < "casos_teste/1.in" > mergeGraph.txt
-        ./bT < "casos_teste/1.in" > heapGraph.txt
+        ./aT < "casos_teste/1.in" > "$Ta.txt"
+        ./bT < "casos_teste/1.in" > "$Tb.txt"
         for i in $(seq 2 "$num_testes"); do
             echo "$i° Caso"
-            ./aT < "casos_teste/$i.in" >> mergeGraph.txt
-            ./bT < "casos_teste/$i.in" >> heapGraph.txt
+            ./aT < "casos_teste/$i.in" >> "$Ta.txt"
+            ./bT < "casos_teste/$i.in" >> "$Tb.txt"
         done
-        python3 ../TimeTest/grafico.py mergeGraph mergeSortT ../TimeTest/Aula6
-        python3 ../TimeTest/grafico.py heapGraph heapSortT ../TimeTest/Aula6
+        python3 ../TimeTest/grafico.py $Ta $Ga $dir
+        python3 ../TimeTest/grafico.py $Tb $Gb $dir
     else
         echo "Opção inválida. Pulando a criação de gráficos."
     fi

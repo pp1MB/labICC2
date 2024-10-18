@@ -5,9 +5,9 @@
 #define CASOS 100
 
 void generate_random_number_string(char *str, int length) {
-    const char digits[] = "123456789AJKQ";
+    const char digits[] = "234567AJKQ";
     for (size_t i = 0; i < length - 1; ++i) {
-        str[i] = digits[rand() % 13];
+        str[i] = digits[rand() % 10];
     }
     str[length - 1] = '\0';
 }
@@ -20,11 +20,15 @@ char *generate_random_card_suit() {
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
     srand(time(NULL));
 
+    if(argc > 2)
+        return 1;
 
-    for (int i = 0; i < CASOS; ++i) {
+    int n = atoi(argv[1]);
+
+    for (int i = 0; i < n; ++i) {
         char filename[50];
         sprintf(filename, "casos_teste/%d.in", i + 1);
         

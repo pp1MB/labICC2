@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        int num_strings = 10 + i * 3;
-        int string_length = 5 + (i / 20);
+        int num_strings = 1 + i * 3;
+        int string_length = 1 + (i / 5);
 
         fprintf(file, "%d %d\n", num_strings, string_length - 1);
         for (int j = 0; j < num_strings; ++j) {

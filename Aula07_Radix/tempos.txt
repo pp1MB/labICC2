@@ -50,3 +50,7 @@ Tempo de execução Stooge Sort: 1.796248 segundos
 
 6° Caso
 Tempo de execução Radix Sort: 0.004997 segundos
+Tempo de execução Stooge Sort: 5166.701824 segundos
+
+7° Caso
+Tempo de execução Radix Sort: 0.059395 segundos

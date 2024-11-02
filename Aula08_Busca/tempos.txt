@@ -1,0 +1,110 @@
+1° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000002
+
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000002
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000001
+
+2° Caso
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000001
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000001
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000002
+
+3° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000002
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000002
+
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000002
+
+4° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000004
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000003
+
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000003
+
+5° Caso
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000004
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000004
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000003
+
+6° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000011
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000011
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000004
+
+7° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000034
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000035
+
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.000035
+
+8° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000077
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000077
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000076
+
+9° Caso
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000437
+
+Tempo de execução Busca Binária: 0.000001
+Tempo de execução Busca Linear: 0.001143
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000480
+
+10° Caso
+Tempo de execução Busca Binária: 0.000003
+Tempo de execução Busca Linear: 0.000258
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000257
+
+Tempo de execução Busca Binária: 0.000002
+Tempo de execução Busca Linear: 0.000267
+
+11° Caso
+Tempo de execução Busca Binária: 0.000008
+Tempo de execução Busca Linear: 0.000000
+
+Tempo de execução Busca Binária: 0.000009
+Tempo de execução Busca Linear: 0.000000
+
+Tempo de execução Busca Binária: 0.000009
+Tempo de execução Busca Linear: 0.000001
+

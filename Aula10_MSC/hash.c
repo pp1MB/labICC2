@@ -8,7 +8,7 @@ typedef struct no_{
 
 typedef struct{
     NO **itens;
-    int mod;
+    int mod;               
 } HASH;
 
 int hashfunc(int k, int m);

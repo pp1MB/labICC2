@@ -32,7 +32,7 @@ int main(void){
     }
 
     printf("%d\n", MSChash(seq, n, max));
-    // printf("%d\n", MSCsort(seq, n));
+    printf("%d\n", MSCsort(seq, n));
 
     free(seq);
 

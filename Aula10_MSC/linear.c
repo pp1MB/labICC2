@@ -31,7 +31,7 @@ int main(void){
         max = (seq[i] > max) ? seq[i] : max;
     }
 
-    printf("%d\n", MSChash(seq, n, max));
+    // printf("%d\n", MSChash(seq, n, max));
     printf("%d\n", MSCsort(seq, n));
 
     free(seq);
@@ -128,7 +128,11 @@ int comparar(const void *a, const void *b){
 
 int MSCsort(int *seq, int n){
     qsort(seq, n, sizeof(int), comparar);
-    
+
+    // for(int i = 0;i < n;i++){
+    //     printf("%d ", seq[i]);
+    // }
+
     int tamanho = 1, global_tamanho = 1;
 
     for(int i = 0; i < n - 1; i++){

@@ -29,7 +29,11 @@ def plotar_grafico(x, y):
     x_fit = np.linspace(min(x), max(x), 500)
     y_fit = p(x_fit)
     
-    plt.plot(x_fit, y_fit, color='r', linestyle='--', label='Fitted Function')
+    plt.plot(x_fit, y_fit, color='r', linestyle='--')
+    plt.xlabel('Entrada')
+    plt.ylabel('Tempo (ms)')
+
+    plt.title(args.nomeGrafico)
     
     plt.legend()
     plt.savefig(f'{args.diretorioGrafico}/{args.nomeGrafico}.png')

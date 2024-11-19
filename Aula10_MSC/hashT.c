@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <time.h>
+
+typedef struct {
+    clock_t start;
+    clock_t end;
+} Timer;
+
+void start_timer(Timer *timer) {
+    timer->start = clock();
+}
+
+double stop_timer(Timer *timer) {
+    timer->end = clock();
+    return ((double) (timer->end - timer->start)) / CLOCKS_PER_SEC;
+}
+
+
 typedef struct no_{
     struct no_ *prox;
     int valor;
@@ -31,8 +48,13 @@ int main(void){
         max = (seq[i] > max) ? seq[i] : max;
     }
 
-    printf("%d\n", MSChash(seq, n, max));
-    printf("%d\n", MSCsort(seq, n));
+    Timer timer;
+    start_timer(&timer);
+    
+    MSChash(seq, n, max);
+
+    printf("%d %lf\n", n, stop_timer(&timer));
+    // printf("%d\n", MSCsort(seq, n));
 
     free(seq);
 
@@ -128,7 +150,6 @@ int comparar(const void *a, const void *b){
 
 int MSCsort(int *seq, int n){
     qsort(seq, n, sizeof(int), comparar);
-    
     int tamanho = 1, global_tamanho = 1;
 
     for(int i = 0; i < n - 1; i++){

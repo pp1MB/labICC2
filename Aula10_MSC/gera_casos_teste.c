@@ -1,20 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
-#define MAX 10000
+#define MAX 1000000
 
 
 int superRand(int max){
     return rand() % max;
 }
 
-int generate_list(int *arr, int size) {
+void generate_list(int *arr, int size) {
+    bool *used = (bool *) calloc(sizeof(bool), MAX);
     for (int i = 0; i < size; i++) {
-        arr[i] = superRand(MAX);
+        int num;
+        do {
+            num = superRand(MAX);
+        } while (used[num]);
+        arr[i] = num;
+        used[num] = 1;
     }
 
-    return arr[superRand(size)];
+    free(used);
 }
 
 int main(int argc, char *argv[]) {
@@ -35,12 +42,12 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        int m = 10000 + 10000 * i;
+        int m = 1000 + 1000 * i;
 
         int *vec = (int *) malloc(m * sizeof(int));
-        int target = generate_list(vec, m);
+        generate_list(vec, m);
 
-        fprintf(file, "%d %d\n", m, target);
+        fprintf(file, "%d\n", m);
         for (int j = 0; j < m; ++j) {
             fprintf(file, "%d ", vec[j]);
         }

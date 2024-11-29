@@ -14,11 +14,18 @@ void caminho(LOCAL *vet, char *começo, int n_passos){
 
     while(strcmp(vet[index_start].nome, começo)) index_start++; // Otimize aqui
     
+    int index_passo = index_start;
     for(int j = 0; j < n_passos; j++){
-        index_start = vet[index_start].adj - 1;
+        index_passo = vet[index_passo].adj - 1;
+
+        // Trata loop
+        if(index_passo == index_start){
+            if(j != 0) n_passos = n_passos % (j + 1) + 1;
+            j = 0;
+        }
     }
 
-    printf("%s\n", vet[index_start].nome);
+    printf("%s\n", vet[index_passo].nome);
 
     return;
 }

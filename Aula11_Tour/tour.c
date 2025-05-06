@@ -12,7 +12,7 @@ typedef struct local_{
 void caminho(LOCAL *vet, char *começo, int n_passos){
     int index_start = 0;
 
-    while(strcmp(vet[index_start].nome, começo)) index_start++; // Otimize aqui
+    while(strcmp(vet[index_start].nome, começo)) index_start++; 
     
     int index_passo = index_start;
     for(int j = 0; j < n_passos; j++){
